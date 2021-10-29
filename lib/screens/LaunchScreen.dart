@@ -77,7 +77,7 @@ class LaunchScreen extends StatelessWidget {
                     wordSpacing: 3,
                   ),
                 ),
-                color: Colors.purpleAccent[100],
+                color: Colors.pinkAccent,
               ),
             ],
           ),
