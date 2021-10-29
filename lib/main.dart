@@ -1,11 +1,11 @@
-import 'package:autopsy_wap/screens/LaunchScreen.dart';
-import 'package:autopsy_wap/screens/patient/PatientDashboard.dart';
-import 'package:autopsy_wap/screens/patient/PatientLogin.dart';
-import 'package:autopsy_wap/screens/patient/firsttimeuser/AllStepsPage.dart';
-import 'package:autopsy_wap/screens/patient/firsttimeuser/CreateAccountPage.dart';
-import 'package:autopsy_wap/screens/patient/firsttimeuser/Finishing%20Page.dart';
-import 'package:autopsy_wap/screens/patient/firsttimeuser/PatientOrDoctorPage.dart';
 import 'package:flutter/material.dart';
+import 'package:project_autopsy/screens/LaunchScreen.dart';
+import 'package:project_autopsy/screens/patient/PatientDashboard.dart';
+import 'package:project_autopsy/screens/patient/PatientLogin.dart';
+import 'package:project_autopsy/screens/patient/firsttimeuser/AllStepsPage.dart';
+import 'package:project_autopsy/screens/patient/firsttimeuser/CreateAccountPage.dart';
+import 'package:project_autopsy/screens/patient/firsttimeuser/Finishing%20Page.dart';
+import 'package:project_autopsy/screens/patient/firsttimeuser/PatientOrDoctorPage.dart';
 
 void main() {
   runApp(MyApp());
