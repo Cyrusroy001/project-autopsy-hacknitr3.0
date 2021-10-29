@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "452735497239",
+    "project_id": "autopsy-47d5f",
+    "storage_bucket": "autopsy-47d5f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:452735497239:android:998c82671a3757e85f9852",
+        "android_client_info": {
+          "package_name": "com.wap.project_autopsy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "452735497239-chpebq7fl2bm05h8cg2s5cgjalv5s2fi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLYN8q7O98AuU9Rg25DxpElk_M_OWXLj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "452735497239-chpebq7fl2bm05h8cg2s5cgjalv5s2fi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
