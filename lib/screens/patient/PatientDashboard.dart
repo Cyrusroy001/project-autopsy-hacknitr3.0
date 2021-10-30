@@ -13,28 +13,30 @@ class _PatientDashboardState extends State<PatientDashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF7EE7D6),
-
+        backgroundColor: Theme.of(context).primaryColor,
         leading: IconButton(
           icon: Icon(Icons.menu),
           onPressed: () {},
-
         ),
-
         title: Text('Dashboard'),
+        elevation: 0,
         centerTitle: true,
-
         actions: [
           //notifications
           IconButton(
             icon: Icon(Icons.notifications),
             onPressed: () {},
-
           ),
-
         ],
       ),
-      body: Container(),
+      body: Center(
+        child: SafeArea(
+          child: Container(
+            padding: EdgeInsets.fromLTRB(25, 50, 25, 25),
+            child: Column(),
+          ),
+        ),
+      ),
     );
   }
 }

@@ -3,17 +3,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class PatientOrDoctor extends StatefulWidget {
-  @override
-  _PatientOrDoctorState createState() => _PatientOrDoctorState();
-}
-
-class _PatientOrDoctorState extends State<PatientOrDoctor> {
+class PatientOrDoctor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(''),
+        title: Text('Who are you?'),
+        elevation: 0,
+        centerTitle: true,
+        backgroundColor: Theme.of(context).primaryColor,
       ),
       body: Center(
         child: SafeArea(
@@ -23,7 +21,7 @@ class _PatientOrDoctorState extends State<PatientOrDoctor> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'STEP 1 : ',
+                    'STEP 1: ',
                     style: TextStyle(
                       letterSpacing: 2,
                       fontSize: 30,
@@ -55,7 +53,7 @@ class _PatientOrDoctorState extends State<PatientOrDoctor> {
                     ),
                   ),
                   SizedBox(
-                    height: 100,
+                    height: 70,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -71,7 +69,7 @@ class _PatientOrDoctorState extends State<PatientOrDoctor> {
                                   height: 150,
                                   width: 150,
                                   padding: const EdgeInsets.all(10),
-                                  // child: Image.asset("assets/images/patient.png"),
+                                  child: Text('title'),
                                   decoration: BoxDecoration(
                                     gradient: LinearGradient(
                                       colors: [
@@ -114,7 +112,7 @@ class _PatientOrDoctorState extends State<PatientOrDoctor> {
                                   padding: const EdgeInsets.all(10),
                                   child: Text(
                                     'title',
-                                    style: Theme.of(context).textTheme.title,
+                                    // style: Theme.of(context).textTheme.title,
                                   ),
                                   decoration: BoxDecoration(
                                     gradient: LinearGradient(
@@ -147,20 +145,25 @@ class _PatientOrDoctorState extends State<PatientOrDoctor> {
                       ),
                     ],
                   ),
-                  RaisedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/CreateAccountPage');
-                    },
-                    child: Text(
-                      'Save and move to Step 2',
-                      style: TextStyle(
-                        color: Color(0xFF1D1D1D),
-                        fontSize: 20,
-                        letterSpacing: 1,
-                        wordSpacing: 2,
+                  SizedBox(
+                    height: 170,
+                  ),
+                  Center(
+                    child: RaisedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/CreateAccountPage');
+                      },
+                      child: Text(
+                        'Save and move to Step 2',
+                        style: TextStyle(
+                          color: Color(0xFF1D1D1D),
+                          fontSize: 20,
+                          letterSpacing: 1,
+                          wordSpacing: 2,
+                        ),
                       ),
+                      color: Theme.of(context).accentColor,
                     ),
-                    color: Theme.of(context).accentColor,
                   ),
                 ],
               )),

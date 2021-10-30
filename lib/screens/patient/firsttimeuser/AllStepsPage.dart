@@ -9,8 +9,9 @@ class AllStepsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Get Started with Autopsy'),
+        centerTitle: true,
         elevation: 0,
-        foregroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Theme.of(context).primaryColor,
       ),
       body: SafeArea(
         child: Container(
@@ -18,36 +19,40 @@ class AllStepsPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Text('STEP 1 : ',
-                    style: TextStyle(
-                      letterSpacing: 2,
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(bottom: 3),
-                    child: Text(
-                      'Tell us about yourself',
+              SizedBox(
+                height: 100,
+              ),
+              Center(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      'STEP 1 : ',
                       style: TextStyle(
-                        fontSize: 18,
+                        letterSpacing: 2,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black87,
                       ),
                     ),
-                  ),
-                ],
+                    Padding(
+                      padding: EdgeInsets.only(bottom: 3),
+                      child: Text(
+                        'Tell us about yourself',
+                        style: TextStyle(
+                          fontSize: 18,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-
               SizedBox(height: 20),
-
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text('STEP 2 : ',
+                  Text(
+                    'STEP 2 : ',
                     style: TextStyle(
                       letterSpacing: 2,
                       fontSize: 30,
@@ -66,13 +71,12 @@ class AllStepsPage extends StatelessWidget {
                   ),
                 ],
               ),
-
               SizedBox(height: 20),
-
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text('STEP 3 : ',
+                  Text(
+                    'STEP 3 : ',
                     style: TextStyle(
                       letterSpacing: 2,
                       fontSize: 30,
@@ -91,13 +95,12 @@ class AllStepsPage extends StatelessWidget {
                   ),
                 ],
               ),
-
               SizedBox(height: 20),
-
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text('STEP 4 : ',
+                  Text(
+                    'STEP 4 : ',
                     style: TextStyle(
                       letterSpacing: 1,
                       fontSize: 30,
@@ -116,15 +119,14 @@ class AllStepsPage extends StatelessWidget {
                   ),
                 ],
               ),
-
-              SizedBox(height: 200),
-
+              SizedBox(height: 230),
               Center(
                 child: RaisedButton(
-                  onPressed: (){
+                  onPressed: () {
                     Navigator.pushNamed(context, '/PatientOrDoctorPage');
                   },
-                  child: Text('Continue with Step 1',
+                  child: Text(
+                    'Continue with Step 1',
                     style: TextStyle(
                       color: Color(0xFF1D1D1D),
                       fontSize: 20,
@@ -135,7 +137,6 @@ class AllStepsPage extends StatelessWidget {
                   color: Theme.of(context).accentColor,
                 ),
               ),
-
             ],
           ),
         ),

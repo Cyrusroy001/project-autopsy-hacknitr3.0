@@ -14,6 +14,9 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Create a New Account'),
+        centerTitle: true,
+        elevation: 0,
+        backgroundColor: Theme.of(context).primaryColor,
       ),
 
       body: Center(
@@ -21,7 +24,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
           onPressed: (){
             Navigator.pushNamed(context, '/FinishingPage');
           },
-          child: Text('Account Created',
+          child: Text('Save and Finish',
             style: TextStyle(
               color: Color(0xFF1D1D1D),
               fontSize: 20,
@@ -29,7 +32,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
               wordSpacing: 3,
             ),
           ),
-          color: Colors.purpleAccent[100],
+          color: Theme.of(context).accentColor,
         ),
       ),
     );

@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'Autopsy',
       theme: ThemeData(
         primaryColor: Color.fromRGBO(193, 191, 250, 1),
+        // ignore: deprecated_member_use
         accentColor: Color.fromRGBO(249, 228, 80, 1),
       ),
       debugShowCheckedModeBanner: false,
