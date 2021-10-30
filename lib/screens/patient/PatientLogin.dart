@@ -1,110 +1,96 @@
-// // ignore_for_file: file_names, prefer_const_constructors, deprecated_member_use, use_key_in_widget_constructors
+// ignore_for_file: file_names, prefer_const_constructors, deprecated_member_use, use_key_in_widget_constructors
 
-// import 'package:flutter/cupertino.dart';
-// import 'package:flutter/material.dart';
-// import 'package:project_autopsy/authenticationservice.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-// class PatientLogin extends StatefulWidget {
-//   @override
-//   _PatientLoginState createState() => _PatientLoginState();
-// }
+class PatientLogin extends StatefulWidget {
+  @override
+  _PatientLoginState createState() => _PatientLoginState();
+}
 
-// class _PatientLoginState extends State<PatientLogin> {
-//   String email = '';
-//   String password = '';
+class _PatientLoginState extends State<PatientLogin> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
-//   // final AuthService _auth = AuthService();
-//   final _formKey = GlobalKey<FormState>();
-//   String error = '';
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+  String logintxt="Login";
+  String headertxt="Enter your credentials";
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         backgroundColor: Color(0xFFC1BFFA),
-//         title: Text('User Login'),
-//         centerTitle: true,
-//       ),
-//       body: Container(
-//         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
-//         child: Form(
-//           key: _formKey,
-//           child: Column(
-//             children: <Widget>[
-//               SizedBox(height: 20.0),
-//               TextFormField(
-//                 validator: (val) => val.isEmpty ? 'Enter an email' : null,
-//                 onChanged: (val) {
-//                   setState(() => email = val);
-//                 },
-//               ),
-//               SizedBox(height: 20.0),
-//               TextFormField(
-//                 obscureText: true,
-//                 validator: (val) =>
-//                     val.length < 6 ? 'Enter a password 6+ chars long' : null,
-//                 onChanged: (val) {
-//                   setState(() => password = val);
-//                 },
-//               ),
-//               SizedBox(height: 20.0),
-//               SizedBox(
-//                   width: 400,
-//                   child: RaisedButton(
-//                       color: Colors.pink[400],
-//                       child: Text(
-//                         'Sign In',
-//                         style: TextStyle(color: Colors.white),
-//                       ),
-//                       onPressed: () async {
-//                         if (_formKey.currentState.validate()) {
-//                           dynamic result = await _auth
-//                               .signInWithEmailAndPassword(email, password);
-//                           if (result == null) {
-//                             setState(() {
-//                               error =
-//                                   'Could not sign in with those credentials';
-//                             }
-//                             );
-//                           } else{
-//                             Navigator.pushNamed(context, '/PatientDashboard');
-//                           }
-//                         }
-//                       })),
-//               SizedBox(height: 12.0),
-//               Text(
-//                 error,
-//                 style: TextStyle(color: Colors.red, fontSize: 14.0),
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        padding: EdgeInsets.symmetric(horizontal: 10),
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        alignment: Alignment.center,
+        child: Form(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [Center(child: Text(headertxt),),
+            SizedBox(height: 55),
+              TextFormField(
+                controller: _emailController,
+                style: TextStyle(fontSize: 22, color: Colors.black),
+                decoration: InputDecoration(
+                  hintText: "Email Address",
+                  hintStyle: TextStyle(fontSize: 22, color: Colors.black),
+                ),
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              TextFormField(
+                controller: _passwordController,
+                obscureText: true,
+                style: TextStyle(fontSize: 22, color: Colors.black),
+                decoration: InputDecoration(
+                  hintText: "Password",
+                  hintStyle: TextStyle(fontSize: 22, color: Colors.black),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  Expanded(
+                      child: ElevatedButton(
+                          onPressed: () async {
+                            await _firebaseAuth.createUserWithEmailAndPassword(
+                                email: _emailController.text,
+                                password: _passwordController.text);
+                          },
+                          child: Text('Register'))),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Expanded(
+                      child: ElevatedButton(
+                          onPressed: () async {
+                            try{
+                            await _firebaseAuth
+                                .signInWithEmailAndPassword(
+                                    email: _emailController.text,
+                                    password: _passwordController.text)
+                                .then((value) => print('Login Successful'));
+                                Navigator.pushNamed(context, '/PatientDashboard');}
+                                catch(e){print(e); 
+                                setState(() {
+                                headertxt="Error";
+                                  
+                                });
+                                }
+                          },
+                          child: Text(logintxt)))
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 
-//   /*Widget buildID() => TextField(
-//         controller: idtxtcontroller,
-//         decoration: InputDecoration(
-//           border: OutlineInputBorder(),
-//           prefixIcon: Icon(Icons.account_circle),
-//           labelText: 'User ID',
-//         ),
-
-//         //done button on keyboard
-//         textInputAction: TextInputAction.done,
-//       );
-
-//   Widget buildPassword() => TextField(
-//         controller: pswrdcontroller,
-//         decoration: InputDecoration(
-//           border: OutlineInputBorder(),
-//           prefixIcon: Icon(Icons.vpn_key),
-//           labelText: 'Password',
-//         ),
-
-//         //done button on keyboard
-//         textInputAction: TextInputAction.done,
-//       );
-// */
-// }
+}
