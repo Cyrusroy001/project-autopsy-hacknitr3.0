@@ -12,31 +12,7 @@ class PatientDashboard extends StatefulWidget {
 class _PatientDashboardState extends State<PatientDashboard> {
   @override
   Widget build(BuildContext context) {
- master
-    return WillPopScope(
-      onWillPop: (){
-        return showDialog(
-            context: context,
-            builder: (context) => AlertDialog(
-              title: Text('Warning'),
-              content: Text('Do you want to exit ?'),
-              actions: [
-                FlatButton(
-                    onPressed: () {
-                      Navigator.pushReplacementNamed(context, '/');
-                    },
-                    child: Text('Yes')
-                ),
-                FlatButton(
-                    onPressed: () {
-                      Navigator.of(context).pop(false);
-                    },
-                    child: Text('No')
-                ),
-              ],
-            ),
-        );
-      },
+    
       return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
@@ -152,9 +128,6 @@ class _PatientDashboardState extends State<PatientDashboard> {
                 ),
               ),
             ],
-
-    
- master
           ),
         ),
       ),

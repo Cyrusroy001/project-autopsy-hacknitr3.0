@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         '/PatientOrDoctorPage' : (context) => PatientOrDoctor(),
         '/CreateAccountPage' : (context) => CreateAccountPage(),
         '/FinishingPage' : (context) => FinishingPage(),
- master
+
 
         //Doctor
         '/DoctorDashboard': (context) => DoctorDashboard(),
@@ -48,7 +48,6 @@ class MyApp extends StatelessWidget {
 
         '/PatientAllReportsPage' : (context) => PatientAllReportsPage(),
         '/ReportDetailPage' : (context) => ReportDetailPage(),
- master
       },
     );
   }
