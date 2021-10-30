@@ -71,7 +71,7 @@ class _MyAppState extends State<MyApp> {
         '/SendReport': (context) => SentReport(),
         // '/EnterPatientUID': (context) => EnterPatientUID(),
 
-        '/PatientAllReportsPage': (context) => PatientAllReportsPage(),
+        '/PatientAllReportsPage': (context) => PatientAllReportsPage(fromDoctor: true,),
         '/ReportDetailPage': (context) => ReportDetailPage(),
       },
     );

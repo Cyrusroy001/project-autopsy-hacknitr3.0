@@ -30,12 +30,17 @@ dependencies:
   cupertino_icons: ^1.0.2
   
   #upload file to firebase  
+<<<<<<< Updated upstream
   firebase_core: ^1.0.3   
   firebase_storage: ^8.0.3
   firebase_auth: ^1.0.1
+=======
+  firebase_core: ^0.7.0   
+  firebase_storage: ^7.0.0
+>>>>>>> Stashed changes
 
   #pick file
-  file_picker: ^3.0.1
+  file_picker: ^2.1.7
 
   #store file on device
   path_provider: ^2.0.1

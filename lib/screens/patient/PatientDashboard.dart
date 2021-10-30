@@ -127,7 +127,13 @@ class _PatientDashboardState extends State<PatientDashboard> {
                     ),
                     TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/PatientAllReportsPage');
+                        Navigator.pushNamed(
+                          context,
+                          '/PatientAllReportsPage',
+                          arguments: {
+                            'fromDoctor': false,
+                          },
+                        );
                       },
                       child: Text(
                         'View all Reports',
