@@ -46,7 +46,15 @@ class LaunchScreen extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: 350),
+              // SizedBox(height: 350),
+              Container(
+                child: Center(
+                  child: Image(
+                    image: AssetImage('assets/images/Landing_Page_Image.png'),
+                    width: 500,
+                  ),
+                ),
+              ),
 
               Center(
                 child: RaisedButton(
