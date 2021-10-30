@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:project_autopsy/screens/LaunchScreen.dart';
 import 'package:project_autopsy/screens/doctor/DoctorDashboard.dart';
 import 'package:project_autopsy/screens/doctor/SendReport.dart';
-import 'package:project_autopsy/screens/doctor/view_report/EnterPatientUID.dart';
 import 'package:project_autopsy/screens/patient/PatientDashboard.dart';
 import 'package:project_autopsy/screens/patient/PatientLogin.dart';
 import 'package:project_autopsy/screens/patient/firsttimeuser/AllStepsPage.dart';
@@ -16,9 +15,7 @@ void main() {
   runApp(MyApp());
 }
 
-
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -33,25 +30,23 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => LaunchScreen(),
-        '/PatientLogin': (context) => PatientLogin(),
+        // '/PatientLogin': (context) => PatientLogin(),
         '/PatientDashboard': (context) => PatientDashboard(),
-        '/AllStepsPage' : (context) => AllStepsPage(),
-        '/PatientOrDoctorPage' : (context) => PatientOrDoctor(),
-        '/CreateAccountPage' : (context) => CreateAccountPage(),
-        '/FinishingPage' : (context) => FinishingPage(),
-
+        '/AllStepsPage': (context) => AllStepsPage(),
+        '/PatientOrDoctorPage': (context) => PatientOrDoctor(),
+        '/CreateAccountPage': (context) => CreateAccountPage(),
+        '/FinishingPage': (context) => FinishingPage(),
 
         //Doctor
         '/DoctorDashboard': (context) => DoctorDashboard(),
         '/SendReport': (context) => SentReport(),
-        '/EnterPatientUID' : (context) => EnterPatientUID(),
+        // '/EnterPatientUID': (context) => EnterPatientUID(),
 
-        '/PatientAllReportsPage' : (context) => PatientAllReportsPage(),
-        '/ReportDetailPage' : (context) => ReportDetailPage(),
+        '/PatientAllReportsPage': (context) => PatientAllReportsPage(),
+        '/ReportDetailPage': (context) => ReportDetailPage(),
       },
     );
   }
+
+
 }
-
-
-

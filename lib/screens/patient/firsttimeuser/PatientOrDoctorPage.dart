@@ -22,7 +22,7 @@ class PatientOrDoctor extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'STEP 1: ',
+                    'STEP 4: ',
                     style: TextStyle(
                       letterSpacing: 2,
                       fontSize: 30,
@@ -34,7 +34,7 @@ class PatientOrDoctor extends StatelessWidget {
                     height: 10,
                   ),
                   Text(
-                    'Start with telling us',
+                    'Finish by telling us',
                     style: TextStyle(
                       letterSpacing: 1,
                       wordSpacing: 2,

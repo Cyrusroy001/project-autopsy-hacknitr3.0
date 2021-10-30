@@ -1,27 +1,25 @@
-import 'model/User.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+// import 'model/User.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 
-class AuthService {
+// class AuthService {
 
-  final FirebaseAuth _auth = FirebaseAuth.instance;
+//   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  // create user obj based on firebase user
-  User _userFromFirebaseUser(FirebaseUser user) {
-    return User(user.uid);
-  }
+//   // create user obj based on firebase user
+//   User _userFromFirebaseUser(FirebaseUser user) {
+//     return User(user.uid);
+//   }
 
-  Future signInWithEmailAndPassword(String email, String password) async {
-    try {
-      AuthResult result = await _auth.signInWithEmailAndPassword(email: email, password: password);
-      FirebaseUser user = result.user;
-      return user;
-    } catch (error) {
-      print(error.toString());
-      return null;
-    } 
-  }
-
-
+//   Future signInWithEmailAndPassword(String email, String password) async {
+//     try {
+//       AuthResult result = await _auth.signInWithEmailAndPassword(email: email, password: password);
+//       FirebaseUser user = result.user;
+//       return user;
+//     } catch (error) {
+//       print(error.toString());
+//       return null;
+//     } 
+//   }
 
 
 
@@ -45,4 +43,6 @@ class AuthService {
 
 
 
-}
+
+
+// }

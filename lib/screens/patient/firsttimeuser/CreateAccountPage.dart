@@ -22,7 +22,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
       body: Center(
         child: RaisedButton(
           onPressed: () {
-            Navigator.pushNamed(context, '/PatientOrDoctorPage');
+            Navigator.pushNamed(context, '/FinishingPage');
           },
           child: Text(
             'Save and Move to Step 2',

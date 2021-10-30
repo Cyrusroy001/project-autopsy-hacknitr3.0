@@ -27,7 +27,7 @@ class _FinishingPageState extends State<FinishingPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'STEP 3: ',
+                  'STEP 2: ',
                   style: TextStyle(
                     letterSpacing: 2,
                     fontSize: 30,
@@ -90,7 +90,7 @@ class _FinishingPageState extends State<FinishingPage> {
                   height: 80,
                 ),
                 Text(
-                  'STEP 4: ',
+                  'STEP 3: ',
                   style: TextStyle(
                     letterSpacing: 2,
                     fontSize: 30,
@@ -102,7 +102,7 @@ class _FinishingPageState extends State<FinishingPage> {
                   height: 10,
                 ),
                 Text(
-                  'You are all set! Sending and receiving medical reports have never been easier!',
+                  'You are all set! Sending and receiving medical reports have never been easier! You just have to answer a final and also the most important question!',
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     letterSpacing: 1,
@@ -111,16 +111,16 @@ class _FinishingPageState extends State<FinishingPage> {
                   ),
                 ),
                 SizedBox(
-                  height: 140,
+                  height: 90,
                 ),
                 Center(
                   child: RaisedButton(
                     onPressed: () {
                       Navigator.pushReplacementNamed(
-                          context, '/PatientDashboard');
+                          context, '/PatientOrDoctorPage');
                     },
                     child: Text(
-                      'Finish, move to Dashboard',
+                      'Answer one last question',
                       style: TextStyle(
                         color: Color(0xFF1D1D1D),
                         fontSize: 20,

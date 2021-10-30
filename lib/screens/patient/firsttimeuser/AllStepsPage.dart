@@ -64,7 +64,7 @@ class AllStepsPage extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(bottom: 3),
                     child: Text(
-                      'Tell us about yourself',
+                      'Get your unique User-ID',
                       style: TextStyle(
                         fontSize: 18,
                       ),
@@ -88,7 +88,7 @@ class AllStepsPage extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(bottom: 3),
                     child: Text(
-                      'Get your unique User-ID',
+                      'Share your User-ID',
                       style: TextStyle(
                         fontSize: 18,
                       ),
@@ -112,7 +112,7 @@ class AllStepsPage extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(bottom: 3),
                     child: Text(
-                      'Share your User-ID',
+                      'Tell us about Yourself',
                       style: TextStyle(
                         fontSize: 18,
                       ),
