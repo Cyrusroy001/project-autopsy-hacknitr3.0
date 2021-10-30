@@ -1,4 +1,4 @@
-// ignore_for_file: file_names, prefer_const_constructors, deprecated_member_use, use_key_in_widget_constructors
+// ignore_for_file: file_names, prefer_const_constructors, deprecated_member_use, use_key_in_widget_constructors, missing_return
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +12,32 @@ class PatientDashboard extends StatefulWidget {
 class _PatientDashboardState extends State<PatientDashboard> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+ master
+    return WillPopScope(
+      onWillPop: (){
+        return showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+              title: Text('Warning'),
+              content: Text('Do you want to exit ?'),
+              actions: [
+                FlatButton(
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, '/');
+                    },
+                    child: Text('Yes')
+                ),
+                FlatButton(
+                    onPressed: () {
+                      Navigator.of(context).pop(false);
+                    },
+                    child: Text('No')
+                ),
+              ],
+            ),
+        );
+      },
+      return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
         foregroundColor: Colors.black87,
@@ -127,6 +152,9 @@ class _PatientDashboardState extends State<PatientDashboard> {
                 ),
               ),
             ],
+
+    
+ master
           ),
         ),
       ),

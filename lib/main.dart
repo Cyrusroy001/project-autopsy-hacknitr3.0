@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project_autopsy/screens/LaunchScreen.dart';
+import 'package:project_autopsy/screens/doctor/DoctorDashboard.dart';
+import 'package:project_autopsy/screens/doctor/SendReport.dart';
+import 'package:project_autopsy/screens/doctor/view_report/EnterPatientUID.dart';
 import 'package:project_autopsy/screens/patient/PatientDashboard.dart';
 import 'package:project_autopsy/screens/patient/PatientLogin.dart';
 import 'package:project_autopsy/screens/patient/firsttimeuser/AllStepsPage.dart';
@@ -36,8 +39,16 @@ class MyApp extends StatelessWidget {
         '/PatientOrDoctorPage' : (context) => PatientOrDoctor(),
         '/CreateAccountPage' : (context) => CreateAccountPage(),
         '/FinishingPage' : (context) => FinishingPage(),
+ master
+
+        //Doctor
+        '/DoctorDashboard': (context) => DoctorDashboard(),
+        '/SendReport': (context) => SentReport(),
+        '/EnterPatientUID' : (context) => EnterPatientUID(),
+
         '/PatientAllReportsPage' : (context) => PatientAllReportsPage(),
         '/ReportDetailPage' : (context) => ReportDetailPage(),
+ master
       },
     );
   }
