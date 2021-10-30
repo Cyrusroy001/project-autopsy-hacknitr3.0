@@ -12,6 +12,7 @@ class PatientOrDoctor extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
         backgroundColor: Theme.of(context).primaryColor,
+        foregroundColor: Colors.black87,
       ),
       body: Center(
         child: SafeArea(
@@ -81,7 +82,11 @@ class PatientOrDoctor extends StatelessWidget {
                                       begin: Alignment.topLeft,
                                       end: Alignment.bottomRight,
                                     ),
-                                    borderRadius: BorderRadius.circular(20),
+                                    borderRadius: BorderRadius.circular(15),
+                                    border: Border.all(
+                                      color: Colors.black87,
+                                      width: 1,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -125,7 +130,11 @@ class PatientOrDoctor extends StatelessWidget {
                                       begin: Alignment.topLeft,
                                       end: Alignment.bottomRight,
                                     ),
-                                    borderRadius: BorderRadius.circular(20),
+                                    borderRadius: BorderRadius.circular(15),
+                                    border: Border.all(
+                                      color: Colors.black87,
+                                      width: 1,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -163,6 +172,11 @@ class PatientOrDoctor extends StatelessWidget {
                         ),
                       ),
                       color: Theme.of(context).accentColor,
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(
+                          color: Colors.black87,
+                        ),
+                      ),
                     ),
                   ),
                 ],

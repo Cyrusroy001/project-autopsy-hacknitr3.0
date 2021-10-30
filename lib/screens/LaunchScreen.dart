@@ -24,7 +24,7 @@ class LaunchScreen extends StatelessWidget {
                   color: Colors.black45,
                 ),
               ),
-              SizedBox(height: 9),
+              SizedBox(height: 7),
               Text(
                   'AUTOPSY',
                 style: TextStyle(
@@ -46,7 +46,7 @@ class LaunchScreen extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: 300),
+              SizedBox(height: 350),
 
               Center(
                 child: RaisedButton(
@@ -61,11 +61,16 @@ class LaunchScreen extends StatelessWidget {
                       wordSpacing: 2,
                     ),
                   ),
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).accentColor,
+                  shape: RoundedRectangleBorder(
+                        side: BorderSide(
+                          color: Colors.black87,
+                        ),
+                      ),
                 ),
               ),
 
-              SizedBox(height: 25),
+              SizedBox(height: 15),
 
               Center(
                 child: RaisedButton(
@@ -80,7 +85,12 @@ class LaunchScreen extends StatelessWidget {
                       wordSpacing: 2,
                     ),
                   ),
-                  color: Theme.of(context).accentColor,
+                  color: Colors.red[200],
+                  shape: RoundedRectangleBorder(
+                        side: BorderSide(
+                          color: Colors.black87,
+                        ),
+                      ),
                 ),
               ),
             ],

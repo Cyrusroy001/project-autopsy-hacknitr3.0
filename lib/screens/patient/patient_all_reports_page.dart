@@ -9,6 +9,7 @@ class PatientAllReportsPage extends StatelessWidget {
         elevation: 0,
         title: Text('My Reports'),
         backgroundColor: Theme.of(context).primaryColor,
+        foregroundColor: Colors.black87,
       ),
       body: Container(
         padding: EdgeInsets.all(20),

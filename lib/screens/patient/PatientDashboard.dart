@@ -15,6 +15,7 @@ class _PatientDashboardState extends State<PatientDashboard> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
+        foregroundColor: Colors.black87,
         leading: IconButton(
           icon: Icon(Icons.menu),
           onPressed: () {},
@@ -44,7 +45,7 @@ class _PatientDashboardState extends State<PatientDashboard> {
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 15,
               ),
               Container(
                 width: double.infinity,
@@ -59,14 +60,18 @@ class _PatientDashboardState extends State<PatientDashboard> {
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(15),
+                  border: Border.all(
+                    color: Colors.black87,
+                    width: 1,
+                  ),
                 ),
                 child: Center(
                   child: Text('//enter something here'),
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 20,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -80,8 +85,7 @@ class _PatientDashboardState extends State<PatientDashboard> {
                   ),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(
-                          context, '/PatientAllReportsPage');
+                      Navigator.pushNamed(context, '/PatientAllReportsPage');
                     },
                     child: Text(
                       'View all Reports',
@@ -95,7 +99,7 @@ class _PatientDashboardState extends State<PatientDashboard> {
                 ],
               ),
               SizedBox(
-                height: 10,
+                height: 1,
               ),
               SizedBox(
                 height: 300,

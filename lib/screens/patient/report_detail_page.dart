@@ -35,6 +35,7 @@ class _ReportDetailPageState extends State<ReportDetailPage> {
         title: Text('Report Details'),
         centerTitle: true,
         backgroundColor: Theme.of(context).primaryColor,
+        foregroundColor: Colors.black87,
         actions: [
           IconButton(
             icon: Icon(Icons.download),
@@ -157,6 +158,11 @@ class _ReportDetailPageState extends State<ReportDetailPage> {
                     ),
                   ),
                   color: Theme.of(context).accentColor,
+                  shape: RoundedRectangleBorder(
+                    side: BorderSide(
+                      color: Colors.black87,
+                    ),
+                  ),
                   onPressed: () {},
                 ),
               ),

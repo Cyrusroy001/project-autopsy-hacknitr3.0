@@ -17,14 +17,15 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
         centerTitle: true,
         elevation: 0,
         backgroundColor: Theme.of(context).primaryColor,
+        foregroundColor: Colors.black87,
       ),
-
       body: Center(
         child: RaisedButton(
-          onPressed: (){
+          onPressed: () {
             Navigator.pushNamed(context, '/FinishingPage');
           },
-          child: Text('Save and Finish',
+          child: Text(
+            'Save and Finish',
             style: TextStyle(
               color: Color(0xFF1D1D1D),
               fontSize: 20,
@@ -33,6 +34,11 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
             ),
           ),
           color: Theme.of(context).accentColor,
+          shape: RoundedRectangleBorder(
+            side: BorderSide(
+              color: Colors.black87,
+            ),
+          ),
         ),
       ),
     );

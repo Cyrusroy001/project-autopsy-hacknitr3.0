@@ -30,8 +30,10 @@ class Report extends StatelessWidget {
     return InkWell(
       onTap: () => showDetails(context),
       child: Card(
+        
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(10),
+          side: BorderSide(color: Colors.black87, width: 1),
         ),
         elevation: 4,
         margin: EdgeInsets.all(10),

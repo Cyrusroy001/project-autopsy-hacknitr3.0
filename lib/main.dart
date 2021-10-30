@@ -21,9 +21,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Autopsy',
       theme: ThemeData(
-        primaryColor: Color.fromRGBO(193, 191, 250, 1),
+        primaryColor: Colors.white,
+        canvasColor: Colors.white,
         // ignore: deprecated_member_use
-        accentColor: Color.fromRGBO(249, 228, 80, 1),
+        accentColor: Color.fromRGBO(193, 191, 250, 1),
       ),
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
