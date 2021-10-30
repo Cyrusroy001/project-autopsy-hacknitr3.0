@@ -24,21 +24,21 @@ class LaunchScreen extends StatelessWidget {
                   color: Colors.black45,
                 ),
               ),
-              SizedBox(height: 14),
+              SizedBox(height: 9),
               Text(
                   'AUTOPSY',
                 style: TextStyle(
                   letterSpacing: 6,
-                  fontSize: 35,
+                  fontSize: 40,
                   fontWeight: FontWeight.bold,
                   color: Colors.black87,
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 9),
               Text(
                   'An app to safely store your Medical Reports.',
                 style: TextStyle(
-                  fontStyle: FontStyle.italic,
+                  // fontStyle: FontStyle.italic,
                   letterSpacing: 1,
                   fontSize: 15,
                   fontWeight: FontWeight.w400,
@@ -46,38 +46,42 @@ class LaunchScreen extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: 200),
+              SizedBox(height: 300),
 
-              RaisedButton(
-                  onPressed: (){
-                    Navigator.pushNamed(context, '/AllStepsPage');
-                  },
-                child: Text('Start Your Journey',
-                  style: TextStyle(
-                    color: Color(0xFF1D1D1D),
-                    fontSize: 20,
-                    letterSpacing: 2,
-                    wordSpacing: 1,
+              Center(
+                child: RaisedButton(
+                    onPressed: (){
+                      Navigator.pushNamed(context, '/AllStepsPage');
+                    },
+                  child: Text('Start Your Journey',
+                    style: TextStyle(
+                      color: Color(0xFF1D1D1D),
+                      fontSize: 20,
+                      letterSpacing: 1,
+                      wordSpacing: 2,
+                    ),
                   ),
+                  color: Theme.of(context).primaryColor,
                 ),
-                color: Color(0xFFC1BFFA),
               ),
 
               SizedBox(height: 25),
 
-              RaisedButton(
-                onPressed: (){
-                  Navigator.pushNamed(context, '/PatientLogin');
-                },
-                child: Text('Already A User',
-                  style: TextStyle(
-                    color: Color(0xFF1D1D1D),
-                    fontSize: 20,
-                    letterSpacing: 2,
-                    wordSpacing: 3,
+              Center(
+                child: RaisedButton(
+                  onPressed: (){
+                    Navigator.pushNamed(context, '/PatientLogin');
+                  },
+                  child: Text('Already A User',
+                    style: TextStyle(
+                      color: Color(0xFF1D1D1D),
+                      fontSize: 20,
+                      letterSpacing: 1,
+                      wordSpacing: 2,
+                    ),
                   ),
+                  color: Theme.of(context).accentColor,
                 ),
-                color: Colors.pinkAccent,
               ),
             ],
           ),

@@ -17,9 +17,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Autopsy App',
+      title: 'Autopsy',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Color.fromRGBO(193, 191, 250, 1),
+        accentColor: Color.fromRGBO(249, 228, 80, 1),
       ),
       debugShowCheckedModeBanner: false,
       initialRoute: '/',

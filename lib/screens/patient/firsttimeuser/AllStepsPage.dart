@@ -8,7 +8,9 @@ class AllStepsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Steps to Follow'),
+        title: Text('Get Started with Autopsy'),
+        elevation: 0,
+        foregroundColor: Theme.of(context).primaryColor,
       ),
       body: SafeArea(
         child: Container(
@@ -40,7 +42,7 @@ class AllStepsPage extends StatelessWidget {
                 ],
               ),
 
-              SizedBox(height: 40),
+              SizedBox(height: 20),
 
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -65,7 +67,7 @@ class AllStepsPage extends StatelessWidget {
                 ],
               ),
 
-              SizedBox(height: 40),
+              SizedBox(height: 20),
 
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -81,7 +83,7 @@ class AllStepsPage extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(bottom: 3),
                     child: Text(
-                      'Get your Unique User ID',
+                      'Get your unique User-ID',
                       style: TextStyle(
                         fontSize: 18,
                       ),
@@ -90,14 +92,14 @@ class AllStepsPage extends StatelessWidget {
                 ],
               ),
 
-              SizedBox(height: 40),
+              SizedBox(height: 20),
 
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text('STEP 4 : ',
                     style: TextStyle(
-                      letterSpacing: 2,
+                      letterSpacing: 1,
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
                       color: Colors.black87,
@@ -106,7 +108,7 @@ class AllStepsPage extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(bottom: 3),
                     child: Text(
-                      'Share your User ID',
+                      'Share your User-ID',
                       style: TextStyle(
                         fontSize: 18,
                       ),
@@ -115,21 +117,23 @@ class AllStepsPage extends StatelessWidget {
                 ],
               ),
 
-              SizedBox(height: 100),
+              SizedBox(height: 200),
 
-              RaisedButton(
-                onPressed: (){
-                  Navigator.pushNamed(context, '/PatientOrDoctorPage');
-                },
-                child: Text('Continue with Step 1',
-                  style: TextStyle(
-                    color: Color(0xFF1D1D1D),
-                    fontSize: 20,
-                    letterSpacing: 2,
-                    wordSpacing: 3,
+              Center(
+                child: RaisedButton(
+                  onPressed: (){
+                    Navigator.pushNamed(context, '/PatientOrDoctorPage');
+                  },
+                  child: Text('Continue with Step 1',
+                    style: TextStyle(
+                      color: Color(0xFF1D1D1D),
+                      fontSize: 20,
+                      letterSpacing: 1,
+                      wordSpacing: 2,
+                    ),
                   ),
+                  color: Theme.of(context).accentColor,
                 ),
-                color: Colors.purpleAccent[100],
               ),
 
             ],
