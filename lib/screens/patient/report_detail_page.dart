@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_autopsy/screens/patient/patient_firebase_services/view_pdf.dart';
 
 class ReportDetailPage extends StatefulWidget {
   @override
@@ -163,7 +164,14 @@ class _ReportDetailPageState extends State<ReportDetailPage> {
                       color: Colors.black87,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ViewPdf(),
+                      ),
+                    );
+                  },
                 ),
               ),
             ],

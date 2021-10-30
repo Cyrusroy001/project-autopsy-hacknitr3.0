@@ -21,7 +21,7 @@ class _DoctorDashboardState extends State<DoctorDashboard> {
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Colors.red,
+                color: Colors.red[200],
               ),
             ),
             content: Text('Do you want to exit from Autopsy?'),
@@ -45,7 +45,7 @@ class _DoctorDashboardState extends State<DoctorDashboard> {
                 child: Text(
                   'No',
                   style: TextStyle(
-                    color: Colors.green,
+                    color: Colors.green[200],
                     fontSize: 18,
                   ),
                 ),
