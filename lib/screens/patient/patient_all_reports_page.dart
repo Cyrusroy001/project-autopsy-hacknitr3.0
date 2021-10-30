@@ -1,7 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:project_autopsy/model/firebase_file.dart';
+import 'package:project_autopsy/screens/doctor/api/firebase_api.dart';
 import 'package:project_autopsy/widgets/report.dart';
 
-class PatientAllReportsPage extends StatelessWidget {
+class PatientAllReportsPage extends StatefulWidget {
+  @override
+  State<PatientAllReportsPage> createState() => _PatientAllReportsPageState();
+}
+
+class _PatientAllReportsPageState extends State<PatientAllReportsPage> {
+  final num = 0;
+  Future<List<FirebaseFile>> futureFiles;
+  @override
+  void initState() {
+    super.initState();
+    futureFiles = FirebaseApi.listAll('files/');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,48 +26,18 @@ class PatientAllReportsPage extends StatelessWidget {
         backgroundColor: Theme.of(context).primaryColor,
         foregroundColor: Colors.black87,
       ),
-      body: Container(
-        padding: EdgeInsets.all(20),
-        child: ListView(
-          children: [
-            Report(
-              title: 'title1',
-              hospital: 'hospital1',
-              doctor: 'doctor1',
-              date: 'date1',
-            ),
-            Report(
-              title: 'title2',
-              hospital: 'hospital2',
-              doctor: 'doctor2',
-              date: 'date2',
-            ),
-            Report(
-              title: 'title3',
-              hospital: 'hospital3',
-              doctor: 'doctor3',
-              date: 'date3',
-            ),
-            Report(
-              title: 'title4',
-              hospital: 'hospital4',
-              doctor: 'doctor4',
-              date: 'date4',
-            ),
-            Report(
-              title: 'title5',
-              hospital: 'hospital5',
-              doctor: 'doctor5',
-              date: 'date5',
-            ),Report(
-              title: 'title6',
-              hospital: 'hospital6',
-              doctor: 'doctor6',
-              date: 'date6',
-            ),
-          ],
-        ),
-      ),
+      body: FutureBuilder<List<FirebaseFile>>(
+          future: futureFiles,
+          builder: (context, snapshot) {
+            return Container(
+              padding: EdgeInsets.all(20),
+              child: ListView(
+                children: [
+                  Text('Total Reports: $num'),
+                ],
+              ),
+            );
+          }),
     );
   }
 }

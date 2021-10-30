@@ -36,6 +36,9 @@ dependencies:
   #pick file
   file_picker: ^3.0.1
 
+  #store file on device
+  path_provider: ^2.0.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
