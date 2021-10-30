@@ -105,7 +105,9 @@ class PatientOrDoctor extends StatelessWidget {
                             children: [
                               InkWell(
                                 splashColor: Theme.of(context).primaryColor,
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.pushReplacementNamed(context, '/DoctorDashboard');
+                                },
                                 child: Container(
                                   height: 150,
                                   width: 150,
