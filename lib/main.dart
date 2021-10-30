@@ -9,6 +9,8 @@ import 'package:project_autopsy/screens/patient/firsttimeuser/AllStepsPage.dart'
 import 'package:project_autopsy/screens/patient/firsttimeuser/CreateAccountPage.dart';
 import 'package:project_autopsy/screens/patient/firsttimeuser/Finishing%20Page.dart';
 import 'package:project_autopsy/screens/patient/firsttimeuser/PatientOrDoctorPage.dart';
+import 'package:project_autopsy/screens/patient/patient_all_reports_page.dart';
+import 'package:project_autopsy/screens/patient/report_detail_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,9 +24,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Autopsy',
       theme: ThemeData(
-        primaryColor: Color.fromRGBO(193, 191, 250, 1),
+        primaryColor: Colors.white,
+        canvasColor: Colors.white,
         // ignore: deprecated_member_use
-        accentColor: Color.fromRGBO(249, 228, 80, 1),
+        accentColor: Color.fromRGBO(193, 191, 250, 1),
       ),
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
@@ -36,11 +39,16 @@ class MyApp extends StatelessWidget {
         '/PatientOrDoctorPage' : (context) => PatientOrDoctor(),
         '/CreateAccountPage' : (context) => CreateAccountPage(),
         '/FinishingPage' : (context) => FinishingPage(),
+ master
 
         //Doctor
         '/DoctorDashboard': (context) => DoctorDashboard(),
         '/SendReport': (context) => SentReport(),
         '/EnterPatientUID' : (context) => EnterPatientUID(),
+
+        '/PatientAllReportsPage' : (context) => PatientAllReportsPage(),
+        '/ReportDetailPage' : (context) => ReportDetailPage(),
+ master
       },
     );
   }

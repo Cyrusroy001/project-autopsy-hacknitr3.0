@@ -12,6 +12,7 @@ class AllStepsPage extends StatelessWidget {
         centerTitle: true,
         elevation: 0,
         backgroundColor: Theme.of(context).primaryColor,
+        foregroundColor: Colors.black87,
       ),
       body: SafeArea(
         child: Container(
@@ -135,6 +136,11 @@ class AllStepsPage extends StatelessWidget {
                     ),
                   ),
                   color: Theme.of(context).accentColor,
+                  shape: RoundedRectangleBorder(
+                        side: BorderSide(
+                          color: Colors.black87,
+                        ),
+                      ),
                 ),
               ),
             ],

@@ -17,6 +17,7 @@ class _FinishingPageState extends State<FinishingPage> {
         centerTitle: true,
         elevation: 0,
         backgroundColor: Theme.of(context).primaryColor,
+        foregroundColor: Colors.black87,
       ),
       body: Center(
         child: SafeArea(
@@ -128,6 +129,11 @@ class _FinishingPageState extends State<FinishingPage> {
                       ),
                     ),
                     color: Theme.of(context).accentColor,
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                        color: Colors.black87,
+                      ),
+                    ),
                   ),
                 ),
               ],
