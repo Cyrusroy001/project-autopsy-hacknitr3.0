@@ -11,6 +11,7 @@ import 'package:project_autopsy/screens/patient/firsttimeuser/Finishing%20Page.d
 import 'package:project_autopsy/screens/patient/firsttimeuser/PatientOrDoctorPage.dart';
 import 'package:project_autopsy/screens/patient/patient_all_reports_page.dart';
 import 'package:project_autopsy/screens/patient/report_detail_page.dart';
+import 'package:project_autopsy/themes.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,17 +19,39 @@ Future main() async {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    currentTheme.addListener(() {
+      setState(() {
+
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Autopsy',
-      theme: ThemeData(
-        primaryColor: Colors.white,
-        canvasColor: Colors.white,
-        // ignore: deprecated_member_use
-        accentColor: Color.fromRGBO(193, 191, 250, 1),
-      ),
+
+      theme: CustomTheme.lightTheme,
+      darkTheme: CustomTheme.darkTheme,
+      themeMode: currentTheme.currentTheme,
+
+      // theme: ThemeData(
+      //   primaryColor: Colors.white,
+      //   canvasColor: Colors.white,
+      //   // ignore: deprecated_member_use
+      //   accentColor: Color.fromRGBO(193, 191, 250, 1),
+      // ),
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
@@ -50,6 +73,4 @@ class MyApp extends StatelessWidget {
       },
     );
   }
-
-
 }

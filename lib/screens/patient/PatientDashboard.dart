@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:project_autopsy/widgets/MenuDrawer.dart';
 import 'package:project_autopsy/widgets/report.dart';
 
 class PatientDashboard extends StatefulWidget {
@@ -56,13 +57,11 @@ class _PatientDashboardState extends State<PatientDashboard> {
         );
       },
       child: Scaffold(
+        drawer: MenuDrawerWidget(),
         appBar: AppBar(
           backgroundColor: Theme.of(context).primaryColor,
           foregroundColor: Colors.black87,
-          leading: IconButton(
-            icon: Icon(Icons.menu),
-            onPressed: () {},
-          ),
+
           title: Text('Dashboard'),
           elevation: 0,
           centerTitle: true,
