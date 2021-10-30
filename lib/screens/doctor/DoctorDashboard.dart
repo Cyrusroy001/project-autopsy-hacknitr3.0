@@ -16,20 +16,39 @@ class _DoctorDashboardState extends State<DoctorDashboard> {
         return showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: Text('Warning'),
-            content: Text('Do you want yo exit ?'),
+            title: Text(
+              'Warning!',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.red,
+              ),
+            ),
+            content: Text('Do you want to exit from Autopsy?'),
             actions: [
               FlatButton(
-                  onPressed: () {
-                    Navigator.pushReplacementNamed(context, '/');
-                  },
-                  child: Text('Yes')
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/');
+                },
+                child: Text(
+                  'Yes',
+                  style: TextStyle(
+                    color: Colors.black87,
+                    fontSize: 18,
+                  ),
+                ),
               ),
               FlatButton(
-                  onPressed: () {
-                    Navigator.of(context).pop(false);
-                  },
-                  child: Text('No')
+                onPressed: () {
+                  Navigator.of(context).pop(false);
+                },
+                child: Text(
+                  'No',
+                  style: TextStyle(
+                    color: Colors.green,
+                    fontSize: 18,
+                  ),
+                ),
               ),
             ],
           ),
@@ -38,11 +57,12 @@ class _DoctorDashboardState extends State<DoctorDashboard> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Theme.of(context).primaryColor,
+          foregroundColor: Colors.black87,
           leading: IconButton(
             icon: Icon(Icons.menu),
             onPressed: () {},
           ),
-          title: Text('Hello, Doctor',
+          title: Text('Dashboard',
             style: TextStyle(
               fontSize: 24,
             ),
@@ -64,14 +84,14 @@ class _DoctorDashboardState extends State<DoctorDashboard> {
                     style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.w400,
-                      fontStyle: FontStyle.italic,
+                      // fontStyle: FontStyle.regular,
                       color: Colors.black87,
                       letterSpacing: 1,
                       wordSpacing: 2,
                     ),
                   ),
 
-                  SizedBox(height: 40),
+                  SizedBox(height: 60),
 
                   Center(
                     child: RaisedButton(
@@ -86,11 +106,11 @@ class _DoctorDashboardState extends State<DoctorDashboard> {
                           wordSpacing: 2,
                         ),
                       ),
-                      color: Theme.of(context).primaryColor,
+                      color: Colors.green[200],
                     ),
                   ),
 
-                  SizedBox(height: 40),
+                  SizedBox(height: 20),
 
                   Center(
                     child: RaisedButton(

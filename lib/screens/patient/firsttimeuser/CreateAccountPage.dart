@@ -22,10 +22,10 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
       body: Center(
         child: RaisedButton(
           onPressed: () {
-            Navigator.pushNamed(context, '/FinishingPage');
+            Navigator.pushNamed(context, '/PatientOrDoctorPage');
           },
           child: Text(
-            'Save and Finish',
+            'Save and Move to Step 2',
             style: TextStyle(
               color: Color(0xFF1D1D1D),
               fontSize: 20,

@@ -54,7 +54,22 @@ class PatientOrDoctor extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 70,
+                    height: 30,
+                  ),
+                  Container(
+                    height: 40,
+                    child: Text(
+                      'Click on one of the cards.',
+                      style: TextStyle(
+                        color: Color(0xFF1D1D1D),
+                        fontSize: 20,
+                        letterSpacing: 1,
+                        wordSpacing: 2,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 100,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -64,8 +79,11 @@ class PatientOrDoctor extends StatelessWidget {
                           Stack(
                             children: [
                               InkWell(
-                                splashColor: Theme.of(context).primaryColor,
-                                onTap: () {},
+                                splashColor: Theme.of(context).accentColor,
+                                onTap: () {
+                                  Navigator.pushReplacementNamed(
+                                      context, '/PatientDashboard');
+                                },
                                 child: Container(
                                   height: 150,
                                   width: 150,
@@ -104,14 +122,24 @@ class PatientOrDoctor extends StatelessWidget {
                           ),
                         ],
                       ),
+                      SizedBox(
+                        width: 20,
+                        child: Text(
+                          'OR',
+                          style: TextStyle(
+                            fontStyle: FontStyle.italic,
+                          ),
+                        ),
+                      ),
                       Column(
                         children: [
                           Stack(
                             children: [
                               InkWell(
-                                splashColor: Theme.of(context).primaryColor,
+                                splashColor: Theme.of(context).accentColor,
                                 onTap: () {
-                                  Navigator.pushReplacementNamed(context, '/DoctorDashboard');
+                                  Navigator.pushReplacementNamed(
+                                      context, '/DoctorDashboard');
                                 },
                                 child: Container(
                                   height: 150,
@@ -155,31 +183,6 @@ class PatientOrDoctor extends StatelessWidget {
                         ],
                       ),
                     ],
-                  ),
-                  SizedBox(
-                    height: 170,
-                  ),
-                  Center(
-                    child: RaisedButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/CreateAccountPage');
-                      },
-                      child: Text(
-                        'Save and move to Step 2',
-                        style: TextStyle(
-                          color: Color(0xFF1D1D1D),
-                          fontSize: 20,
-                          letterSpacing: 1,
-                          wordSpacing: 2,
-                        ),
-                      ),
-                      color: Theme.of(context).accentColor,
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                          color: Colors.black87,
-                        ),
-                      ),
-                    ),
                   ),
                 ],
               )),

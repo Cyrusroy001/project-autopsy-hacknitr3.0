@@ -13,10 +13,11 @@ class _EnterPatientUIDState extends State<EnterPatientUID> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Enter Patient UID'),
+        title: Text('View Reports'),
         centerTitle: true,
         elevation: 0,
         backgroundColor: Theme.of(context).primaryColor,
+        foregroundColor: Colors.black87,
       ),
 
 
@@ -26,7 +27,7 @@ class _EnterPatientUIDState extends State<EnterPatientUID> {
           children: [
 
             Padding(
-              padding: const EdgeInsets.only(top: 100),
+              padding: const EdgeInsets.only(top: 200),
               child: buildID(),
             ),
 
@@ -39,7 +40,7 @@ class _EnterPatientUIDState extends State<EnterPatientUID> {
                   padding: EdgeInsets.only(left: 160),
 
                   child: RaisedButton(
-                    color: Color(0xFFEA8C86),
+                    color: Theme.of(context).accentColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(7),
                     ),

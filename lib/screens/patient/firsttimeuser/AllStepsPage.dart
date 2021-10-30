@@ -39,7 +39,7 @@ class AllStepsPage extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(bottom: 3),
                       child: Text(
-                        'Tell us about yourself',
+                        'Register your account',
                         style: TextStyle(
                           fontSize: 18,
                         ),
@@ -64,7 +64,7 @@ class AllStepsPage extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(bottom: 3),
                     child: Text(
-                      'Register your account',
+                      'Tell us about yourself',
                       style: TextStyle(
                         fontSize: 18,
                       ),
@@ -124,7 +124,7 @@ class AllStepsPage extends StatelessWidget {
               Center(
                 child: RaisedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/PatientOrDoctorPage');
+                    Navigator.pushNamed(context, '/CreateAccountPage');
                   },
                   child: Text(
                     'Continue with Step 1',

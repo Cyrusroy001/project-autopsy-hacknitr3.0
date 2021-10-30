@@ -17,49 +17,45 @@ class _SentReportState extends State<SentReport> {
         centerTitle: true,
         elevation: 0,
         backgroundColor: Theme.of(context).primaryColor,
+        foregroundColor: Colors.black87,
       ),
-
       body: Center(
         child: ListView(
           padding: EdgeInsets.all(32),
           children: [
-
             Padding(
-              padding: const EdgeInsets.only(top: 100),
+              padding: const EdgeInsets.only(top: 200),
               child: buildID(),
             ),
-
             SizedBox(height: 25),
-
             InkWell(
-              onTap: (){
+              onTap: () {
                 // on tap attach files
               },
               child: Container(
                 height: 40,
-                color: Colors.green[200],
-                child: Center(
-                  child: Text(
+                color: Theme.of(context).accentColor,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Icon(Icons.add),
+                    Text(
                       'Attach file here',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black87,
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black87,
+                      ),
                     ),
-                  ),
+                  ],
                 ),
               ),
             ),
-
-
-
             ButtonBar(
               children: [
-
                 Padding(
                   padding: EdgeInsets.only(left: 160),
-
                   child: RaisedButton(
-                    color: Color(0xFFEA8C86),
+                    color: Colors.green[200],
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(7),
                     ),
@@ -70,17 +66,13 @@ class _SentReportState extends State<SentReport> {
                         color: Colors.white,
                       ),
                     ),
-                    onPressed:() {
+                    onPressed: () {
                       // ON Pressed show reports of particular UID
                     },
                   ),
                 ),
-
-
               ],
-
             ),
-
           ],
         ),
       ),
@@ -88,14 +80,13 @@ class _SentReportState extends State<SentReport> {
   }
 
   Widget buildID() => TextField(
-    decoration: InputDecoration(
-      border: OutlineInputBorder(),
-      prefixIcon: Icon(Icons.account_circle),
-      labelText: 'Enter Patient UID',
-    ),
+        decoration: InputDecoration(
+          border: OutlineInputBorder(),
+          prefixIcon: Icon(Icons.account_circle),
+          labelText: 'Enter Patient UID',
+        ),
 
-    //done button on keyboard
-    textInputAction: TextInputAction.done,
-  );
-
+        //done button on keyboard
+        textInputAction: TextInputAction.done,
+      );
 }

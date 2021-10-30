@@ -12,33 +12,50 @@ class PatientDashboard extends StatefulWidget {
 class _PatientDashboardState extends State<PatientDashboard> {
   @override
   Widget build(BuildContext context) {
-    
-      return WillPopScope(
-        onWillPop: (){
-          return showDialog(
-            context: context,
-            builder: (context) => AlertDialog(
-              title: Text('Warning'),
-              content: Text('Do you want yo exit ?'),
-              actions: [
-                FlatButton(
-                    onPressed: () {
-                      Navigator.pushReplacementNamed(context, '/');
-                    },
-                    child: Text('Yes')
-                ),
-                FlatButton(
-                    onPressed: () {
-                      Navigator.of(context).pop(false);
-                    },
-                    child: Text('No')
-                ),
-              ],
+    return WillPopScope(
+      onWillPop: () {
+        return showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text(
+              'Warning!',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.red,
+              ),
             ),
-          );
-        },
-
-        child: Scaffold(
+            content: Text('Do you want to exit from Autopsy?'),
+            actions: [
+              FlatButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/');
+                },
+                child: Text(
+                  'Yes',
+                  style: TextStyle(
+                    color: Colors.black87,
+                    fontSize: 18,
+                  ),
+                ),
+              ),
+              FlatButton(
+                onPressed: () {
+                  Navigator.of(context).pop(false);
+                },
+                child: Text(
+                  'No',
+                  style: TextStyle(
+                    color: Colors.green,
+                    fontSize: 18,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+      child: Scaffold(
         appBar: AppBar(
           backgroundColor: Theme.of(context).primaryColor,
           foregroundColor: Colors.black87,
@@ -128,7 +145,7 @@ class _PatientDashboardState extends State<PatientDashboard> {
                   height: 1,
                 ),
                 SizedBox(
-                  height: 300,
+                  height: 330,
                   child: ListView(
                     children: [
                       Report(
@@ -156,7 +173,7 @@ class _PatientDashboardState extends State<PatientDashboard> {
             ),
           ),
         ),
-    ),
-      );
+      ),
+    );
   }
 }
