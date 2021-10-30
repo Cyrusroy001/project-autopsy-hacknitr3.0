@@ -40,6 +40,11 @@ dependencies:
   #store file on device
   path_provider: ^2.0.1
 
+  #viewing pdf
+  flutter_pdfview: ^1.0.1
+  http: ^0.12.0+4
+  permission_handler: ^4.4.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
