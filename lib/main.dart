@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:project_autopsy/screens/LaunchScreen.dart';
 import 'package:project_autopsy/screens/doctor/DoctorDashboard.dart';
@@ -11,7 +12,9 @@ import 'package:project_autopsy/screens/patient/firsttimeuser/PatientOrDoctorPag
 import 'package:project_autopsy/screens/patient/patient_all_reports_page.dart';
 import 'package:project_autopsy/screens/patient/report_detail_page.dart';
 
-void main() {
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
