@@ -2,8 +2,21 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:project_autopsy/authenticationservice.dart';
 
-class PatientLogin extends StatelessWidget {
+class PatientLogin extends StatefulWidget {
+  @override
+  _PatientLoginState createState() => _PatientLoginState();
+}
+
+class _PatientLoginState extends State<PatientLogin> {
+  String email = '';
+  String password = '';
+
+  final AuthService _auth = AuthService();
+  final _formKey = GlobalKey<FormState>();
+  String error = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,107 +25,86 @@ class PatientLogin extends StatelessWidget {
         title: Text('User Login'),
         centerTitle: true,
       ),
-      body: Center(
-        child: ListView(
-          padding: EdgeInsets.all(32),
-          children: [
-
-            Padding(
-              padding: const EdgeInsets.only(top: 50),
-              child: buildID(),
-            ),
-
-            Padding(
-              padding: const EdgeInsets.only(top: 30, bottom: 20),
-              child: buildPassword(),
-            ),
-
-            ButtonBar(
-              children: [
-
-                Padding(
-                  padding: EdgeInsets.only(left: 160),
-
+      body: Container(
+        padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: <Widget>[
+              SizedBox(height: 20.0),
+              TextFormField(
+                validator: (val) => val.isEmpty ? 'Enter an email' : null,
+                onChanged: (val) {
+                  setState(() => email = val);
+                },
+              ),
+              SizedBox(height: 20.0),
+              TextFormField(
+                obscureText: true,
+                validator: (val) =>
+                    val.length < 6 ? 'Enter a password 6+ chars long' : null,
+                onChanged: (val) {
+                  setState(() => password = val);
+                },
+              ),
+              SizedBox(height: 20.0),
+              SizedBox(
+                  width: 400,
                   child: RaisedButton(
-                    color: Color(0xFFEA8C86),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(7),
-                    ),
-                    child: Text(
-                      'Submit',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
+                      color: Colors.pink[400],
+                      child: Text(
+                        'Sign In',
+                        style: TextStyle(color: Colors.white),
                       ),
-                    ),
-                    onPressed:() {
-
-                      //Authentication Logic and awaiting etc. and dashboard view
-
-                      // if patient
-                      Navigator.pushReplacementNamed(context, '/PatientDashboard');
-
-
-                    },
-                  ),
-                ),
-
-                Padding(
-                  padding: EdgeInsets.only(right: 50, top: 110),
-                  child: RaisedButton(
-                    color: Colors.amber[400],
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(7),
-                    ),
-                    child: Text(
-                      'Create a New Account',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
-                      ),
-                    ),
-                    onPressed:() {
-                      Navigator.pushReplacementNamed(context, '/AllStepsPage');
-                    },
-                  ),
-                ),
-
-              ],
-
-            ),
-
-          ],
+                      onPressed: () async {
+                        if (_formKey.currentState.validate()) {
+                          dynamic result = await _auth
+                              .signInWithEmailAndPassword(email, password);
+                          if (result == null) {
+                            setState(() {
+                              error =
+                                  'Could not sign in with those credentials';
+                            }
+                            );
+                          } else{
+                            Navigator.pushNamed(context, '/PatientDashboard');
+                          }
+                        }
+                      })),
+              SizedBox(height: 12.0),
+              Text(
+                error,
+                style: TextStyle(color: Colors.red, fontSize: 14.0),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 
-  // ID text field widget
+  /*Widget buildID() => TextField(
+        controller: idtxtcontroller,
+        decoration: InputDecoration(
+          border: OutlineInputBorder(),
+          prefixIcon: Icon(Icons.account_circle),
+          labelText: 'User ID',
+        ),
 
-  Widget buildID() => TextField(
-    decoration: InputDecoration(
-      border: OutlineInputBorder(),
-      prefixIcon: Icon(Icons.account_circle),
-      labelText: 'User ID',
-    ),
+        //done button on keyboard
+        textInputAction: TextInputAction.done,
+      );
 
-    //done button on keyboard
-    textInputAction: TextInputAction.done,
-  );
-
-
-
-  // password text field widget
   Widget buildPassword() => TextField(
-    decoration: InputDecoration(
-      border: OutlineInputBorder(),
-      prefixIcon: Icon(Icons.vpn_key),
-      labelText: 'Password',
-    ),
+        controller: pswrdcontroller,
+        decoration: InputDecoration(
+          border: OutlineInputBorder(),
+          prefixIcon: Icon(Icons.vpn_key),
+          labelText: 'Password',
+        ),
 
-    //done button on keyboard
-    textInputAction: TextInputAction.done,
-  );
-
-
+        //done button on keyboard
+        textInputAction: TextInputAction.done,
+      );
+*/
 }
