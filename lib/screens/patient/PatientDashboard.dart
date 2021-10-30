@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:project_autopsy/widgets/report.dart';
 
 class PatientDashboard extends StatefulWidget {
   @override
@@ -29,11 +30,99 @@ class _PatientDashboardState extends State<PatientDashboard> {
           ),
         ],
       ),
-      body: Center(
-        child: SafeArea(
-          child: Container(
-            padding: EdgeInsets.fromLTRB(25, 50, 25, 25),
-            child: Column(),
+      body: SafeArea(
+        child: Container(
+          padding: EdgeInsets.fromLTRB(25, 15, 25, 25),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Some statistics: ',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                width: double.infinity,
+                height: 200,
+                // color: Theme.of(context).accentColor,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Theme.of(context).accentColor.withOpacity(0.6),
+                      Theme.of(context).accentColor,
+                    ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Center(
+                  child: Text('//enter something here'),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Latest Reports: ',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(
+                          context, '/PatientAllReportsPage');
+                    },
+                    child: Text(
+                      'View all Reports',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.green,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              SizedBox(
+                height: 300,
+                child: ListView(
+                  children: [
+                    Report(
+                      title: 'title1',
+                      hospital: 'hospital1',
+                      doctor: 'doctor1',
+                      date: 'date1',
+                    ),
+                    Report(
+                      title: 'title2',
+                      hospital: 'hospital2',
+                      doctor: 'doctor2',
+                      date: 'date2',
+                    ),
+                    Report(
+                      title: 'title3',
+                      hospital: 'hospita13',
+                      doctor: 'doctor3',
+                      date: 'date3',
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
       ),

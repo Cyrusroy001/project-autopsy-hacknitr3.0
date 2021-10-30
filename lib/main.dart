@@ -6,6 +6,8 @@ import 'package:project_autopsy/screens/patient/firsttimeuser/AllStepsPage.dart'
 import 'package:project_autopsy/screens/patient/firsttimeuser/CreateAccountPage.dart';
 import 'package:project_autopsy/screens/patient/firsttimeuser/Finishing%20Page.dart';
 import 'package:project_autopsy/screens/patient/firsttimeuser/PatientOrDoctorPage.dart';
+import 'package:project_autopsy/screens/patient/patient_all_reports_page.dart';
+import 'package:project_autopsy/screens/patient/report_detail_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -33,6 +35,8 @@ class MyApp extends StatelessWidget {
         '/PatientOrDoctorPage' : (context) => PatientOrDoctor(),
         '/CreateAccountPage' : (context) => CreateAccountPage(),
         '/FinishingPage' : (context) => FinishingPage(),
+        '/PatientAllReportsPage' : (context) => PatientAllReportsPage(),
+        '/ReportDetailPage' : (context) => ReportDetailPage(),
       },
     );
   }
