@@ -32,6 +32,7 @@ dependencies:
   #upload file to firebase  
   firebase_core: ^1.0.3   
   firebase_storage: ^8.0.3
+  firebase_auth: ^1.0.1
 
   #pick file
   file_picker: ^3.0.1

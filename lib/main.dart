@@ -11,8 +11,10 @@ import 'package:project_autopsy/screens/patient/firsttimeuser/Finishing%20Page.d
 import 'package:project_autopsy/screens/patient/firsttimeuser/PatientOrDoctorPage.dart';
 import 'package:project_autopsy/screens/patient/patient_all_reports_page.dart';
 import 'package:project_autopsy/screens/patient/report_detail_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-Future main() async {
+
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MyApp());
@@ -33,7 +35,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => LaunchScreen(),
-        // '/PatientLogin': (context) => PatientLogin(),
+        '/PatientLogin': (context) => PatientLogin(),
         '/PatientDashboard': (context) => PatientDashboard(),
         '/AllStepsPage': (context) => AllStepsPage(),
         '/PatientOrDoctorPage': (context) => PatientOrDoctor(),
