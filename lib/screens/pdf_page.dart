@@ -78,7 +78,9 @@ class _PdfPageState extends State<PdfPage> {
     if (loaded) {
       return Scaffold(
         appBar: AppBar(
-          title: Text('PDF Viewer'),
+          title: Text('Autopsy PDF Viewer'),
+          elevation: 0,
+          centerTitle: true,
           foregroundColor: Colors.black87,
           backgroundColor: Theme.of(context).primaryColor,
           actions: [
@@ -95,22 +97,22 @@ class _PdfPageState extends State<PdfPage> {
                 Icons.file_download,
               ),
             ),
-            IconButton(
-              onPressed: () async {
+            // IconButton(
+            //   onPressed: () async {
                 
-                await FirebaseApi.deleteFile(widget.file.ref);
-                setState(() {});
+            //     await FirebaseApi.deleteFile(widget.file.ref);
+            //     setState(() {});
 
-                final snackBar = SnackBar(
-                  content: Text('Deleted ${widget.file.name}'),
-                );
-                ScaffoldMessenger.of(context).showSnackBar(snackBar);
-              },
-              icon: Icon(
-                Icons.delete,
-                color: Colors.red,
-              ),
-            ),
+            //     final snackBar = SnackBar(
+            //       content: Text('Deleted ${widget.file.name}'),
+            //     );
+            //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+            //   },
+            //   icon: Icon(
+            //     Icons.delete,
+            //     color: Colors.red,
+            //   ),
+            // ),
           ],
         ),
         body: PDFView(

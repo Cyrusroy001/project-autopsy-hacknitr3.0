@@ -10,46 +10,66 @@ class MenuDrawerWidget extends StatefulWidget {
 }
 
 class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
-
-
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: Material(
         child: ListView(
           children: [
-            SizedBox(height: 40),
-
-            Divider( thickness: 4 ),
-
+            SizedBox(
+              height: 40,
+              child: Container(
+                color: Theme.of(context).accentColor,
+                child: Center(
+                  child: Text(
+                    "Drawer",
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            // Divider(thickness: 4),
             SizedBox(height: 30),
-
             buildMenuItem(
               text: 'My Information',
               icon: Icons.account_circle,
               onClicked: () => selectedItem(context, 0),
             ),
-
             SizedBox(height: 10),
-
             buildMenuItem(
               text: 'DarkMode',
               icon: Icons.brightness_4,
               onClicked: () => selectedItem(context, 1),
             ),
-
-            SizedBox(height: 30),
-
-            Divider( thickness: 4 ),
-
             SizedBox(height: 20),
-
-            buildMenuItem(
-              text: 'Logout',
-              icon: Icons.account_circle_outlined,
-              onClicked: () => selectedItem(context, 2),
+            Divider(thickness: 4),
+            SizedBox(height: 400),
+            RaisedButton(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Icon(Icons.exit_to_app),
+                  Text(
+                    "Log Out",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                ],
+              ),
+              color: Theme.of(context).accentColor,
+              onPressed: () => selectedItem(context, 2),
+              shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                        color: Colors.black87,
+                      ),
+                    ),
             ),
-
           ],
         ),
       ),
@@ -61,27 +81,29 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
     IconData icon,
     VoidCallback onClicked,
   }) {
-
     return ListTile(
-      leading: Icon(icon,  size: 30,),
-      title: Text(text, style: TextStyle( fontSize: 20)),
+      leading: Icon(
+        icon,
+        color: Colors.black87,
+        size: 24,
+      ),
+      title: Text(text, style: TextStyle(fontSize: 16)),
       onTap: onClicked,
     );
   }
 
-  void selectedItem(BuildContext context, int index){
+  void selectedItem(BuildContext context, int index) {
     switch (index) {
-      case 0 :
-      // Add Information Page
+      case 0:
+        // Add Information Page
 
         break;
-      case 1 :
+      case 1:
         currentTheme.toggleTheme();
         break;
-      case 2 :
+      case 2:
         Navigator.pushReplacementNamed(context, '/');
         break;
-
     }
   }
 }

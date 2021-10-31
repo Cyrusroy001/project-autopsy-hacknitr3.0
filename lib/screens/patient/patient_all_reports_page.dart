@@ -30,6 +30,7 @@ class _PatientAllReportsPageState extends State<PatientAllReportsPage> {
       appBar: AppBar(
         elevation: 0,
         title: Text('Reports'),
+        centerTitle: true,
         backgroundColor: Theme.of(context).primaryColor,
         foregroundColor: Colors.black87,
       ),

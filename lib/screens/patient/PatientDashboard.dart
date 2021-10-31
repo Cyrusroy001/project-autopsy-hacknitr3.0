@@ -64,13 +64,13 @@ class _PatientDashboardState extends State<PatientDashboard> {
           title: Text('Dashboard'),
           elevation: 0,
           centerTitle: true,
-          actions: [
-            //notifications
-            IconButton(
-              icon: Icon(Icons.notifications),
-              onPressed: () {},
-            ),
-          ],
+          // actions: [
+          //   //notifications
+          //   IconButton(
+          //     icon: Icon(Icons.notifications),
+          //     onPressed: () {},
+          //   ),
+          // ],
         ),
         body: SafeArea(
           child: Container(
