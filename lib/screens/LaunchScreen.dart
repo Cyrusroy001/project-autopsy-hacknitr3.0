@@ -17,19 +17,21 @@ class LaunchScreen extends StatelessWidget {
                 Text(
                   'Welcome to',
                   style: TextStyle(
-                    letterSpacing: 3,
-                    fontSize: 40,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.black45,
+                    letterSpacing: 2,
+                    fontSize: 36,
+                    // fontWeight: FontWeight.w400,
+                    fontFamily: 'SourceSansPro',
+                    color: Colors.black54,
                   ),
                 ),
-                SizedBox(height: 7),
+                SizedBox(height: 3),
                 Text(
                   'AUTOPSY',
                   style: TextStyle(
-                    letterSpacing: 6,
+                    letterSpacing: 3,
                     fontSize: 40,
-                    fontWeight: FontWeight.bold,
+                    fontFamily: 'BebasNeue',
+                    fontWeight: FontWeight.w800,
                     color: Colors.black87,
                   ),
                 ),
@@ -40,12 +42,13 @@ class LaunchScreen extends StatelessWidget {
                     // fontStyle: FontStyle.italic,
                     letterSpacing: 1,
                     fontSize: 15,
-                    fontWeight: FontWeight.w400,
+                    fontFamily: 'SourceSansPro',
+                    // fontWeight: FontWeight.w400,
                     color: Colors.black87,
                   ),
                 ),
 
-              // SizedBox(height: 350),
+              SizedBox(height: 30),
               Container(
                 child: Center(
                   child: Image(
@@ -54,7 +57,7 @@ class LaunchScreen extends StatelessWidget {
                   ),
                 ),
               ),
-
+                SizedBox(height: 20,),
                 Center(
                   child: RaisedButton(
                     onPressed: () {

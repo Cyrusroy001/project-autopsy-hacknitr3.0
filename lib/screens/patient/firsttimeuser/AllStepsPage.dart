@@ -32,7 +32,8 @@ class AllStepsPage extends StatelessWidget {
                       style: TextStyle(
                         letterSpacing: 2,
                         fontSize: 30,
-                        fontWeight: FontWeight.bold,
+                        fontFamily: 'BebasNeue',
+                        fontWeight: FontWeight.w700,
                         color: Colors.black87,
                       ),
                     ),
@@ -57,7 +58,8 @@ class AllStepsPage extends StatelessWidget {
                     style: TextStyle(
                       letterSpacing: 2,
                       fontSize: 30,
-                      fontWeight: FontWeight.bold,
+                      fontFamily: 'BebasNeue',
+                        fontWeight: FontWeight.w700,
                       color: Colors.black87,
                     ),
                   ),
@@ -81,7 +83,8 @@ class AllStepsPage extends StatelessWidget {
                     style: TextStyle(
                       letterSpacing: 2,
                       fontSize: 30,
-                      fontWeight: FontWeight.bold,
+                      fontFamily: 'BebasNeue',
+                        fontWeight: FontWeight.w700,
                       color: Colors.black87,
                     ),
                   ),
@@ -105,7 +108,8 @@ class AllStepsPage extends StatelessWidget {
                     style: TextStyle(
                       letterSpacing: 1,
                       fontSize: 30,
-                      fontWeight: FontWeight.bold,
+                      fontFamily: 'BebasNeue',
+                        fontWeight: FontWeight.w700,
                       color: Colors.black87,
                     ),
                   ),
@@ -137,10 +141,10 @@ class AllStepsPage extends StatelessWidget {
                   ),
                   color: Theme.of(context).accentColor,
                   shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                          color: Colors.black87,
-                        ),
-                      ),
+                    side: BorderSide(
+                      color: Colors.black87,
+                    ),
+                  ),
                 ),
               ),
             ],
