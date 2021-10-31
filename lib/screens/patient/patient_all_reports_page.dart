@@ -40,7 +40,7 @@ class _PatientAllReportsPageState extends State<PatientAllReportsPage> {
           switch (snapshot.connectionState) {
             case ConnectionState.waiting:
               return Center(
-                child: CircularProgressIndicator(),
+                child: CircularProgressIndicator(color: Colors.green[200],),
               );
             default:
               if (snapshot.hasError) {

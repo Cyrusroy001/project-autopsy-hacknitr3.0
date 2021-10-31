@@ -104,12 +104,22 @@ class _DoctorDashboardState extends State<DoctorDashboard> {
                           wordSpacing: 2,
                         ),
                       ),
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(
+                          color: Colors.black87,
+                        ),
+                      ),
                       color: Colors.green[200],
                     ),
                   ),
                   SizedBox(height: 20),
                   Center(
                     child: RaisedButton(
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(
+                          color: Colors.black87,
+                        ),
+                      ),
                       onPressed: () {
                         Navigator.pushNamed(
                           context,

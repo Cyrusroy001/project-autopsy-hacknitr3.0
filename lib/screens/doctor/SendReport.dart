@@ -23,7 +23,7 @@ class _SentReportState extends State<SentReport> {
 
   @override
   Widget build(BuildContext context) {
-    final fileName = file != null ? '1 File Selected' : 'No File Selected';
+    final fileName = file != null ? '1 File Selected' : 'No File Selected. Start selecting!';
     return Scaffold(
       appBar: AppBar(
         title: Text('Send Report'),
@@ -49,12 +49,22 @@ class _SentReportState extends State<SentReport> {
                   child: Text('Add file'),
                   color: Theme.of(context).accentColor,
                   onPressed: selectFile,
+                  shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                        color: Colors.black87,
+                      ),
+                    ),
                 ),
                 SizedBox(width: 10),
                 RaisedButton(
                   child: Text('Send'),
                   color: Colors.green[200],
                   onPressed: uploadFile,
+                  shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                        color: Colors.black87,
+                      ),
+                    ),
                 ),
               ],
             ),
@@ -62,8 +72,10 @@ class _SentReportState extends State<SentReport> {
               height: 30,
             ),
             Center(
-              child: Text(
-                fileName, style: TextStyle(fontSize: 24,),
+              child: file == null ? Text(
+                fileName, style: TextStyle(fontSize: 18, color: Colors.red),
+              ) : Text(
+                fileName, style: TextStyle(fontSize: 18, color: Colors.black87),
               ),
             ),
             SizedBox(
