@@ -67,7 +67,7 @@ class _FinishingPageState extends State<FinishingPage> {
                       width: 250,
                       color: Theme.of(context).accentColor,
                       child: Text(
-                        '//insert UID here',
+                        'vhs547s',
                         style: TextStyle(
                           fontSize: 20,
                         ),

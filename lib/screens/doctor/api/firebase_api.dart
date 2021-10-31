@@ -42,4 +42,11 @@ class FirebaseApi {
 
     await ref.writeToFile(file);
   }
+
+  static Future deleteFile(Reference ref) async {
+    final dir = await getApplicationDocumentsDirectory();
+    final file = File('${dir.path}/${ref.name}');
+
+    await ref.delete();
+  }
 }

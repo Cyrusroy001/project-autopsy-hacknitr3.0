@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:project_autopsy/widgets/MenuDrawer.dart';
 import 'package:project_autopsy/widgets/report.dart';
 
 class PatientDashboard extends StatefulWidget {
@@ -56,13 +57,11 @@ class _PatientDashboardState extends State<PatientDashboard> {
         );
       },
       child: Scaffold(
+        drawer: MenuDrawerWidget(),
         appBar: AppBar(
           backgroundColor: Theme.of(context).primaryColor,
           foregroundColor: Colors.black87,
-          leading: IconButton(
-            icon: Icon(Icons.menu),
-            onPressed: () {},
-          ),
+          
           title: Text('Dashboard'),
           elevation: 0,
           centerTitle: true,
@@ -110,7 +109,11 @@ class _PatientDashboardState extends State<PatientDashboard> {
                     ),
                   ),
                   child: Center(
-                    child: Text('//enter something here'),
+                    child: Image(
+                      image: AssetImage('assets/images/graph.gif'),
+                      height: 200,
+                      width: 500,
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -128,7 +131,13 @@ class _PatientDashboardState extends State<PatientDashboard> {
                     ),
                     TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/PatientAllReportsPage');
+                        Navigator.pushNamed(
+                          context,
+                          '/PatientAllReportsPage',
+                          arguments: {
+                            'fromDoctor': false,
+                          },
+                        );
                       },
                       child: Text(
                         'View all Reports',
@@ -149,22 +158,22 @@ class _PatientDashboardState extends State<PatientDashboard> {
                   child: ListView(
                     children: [
                       Report(
-                        title: 'title1',
-                        hospital: 'hospital1',
-                        doctor: 'doctor1',
-                        date: 'date1',
+                        title: 'Blood Report',
+                        hospital: 'KMC City Hospital',
+                        doctor: 'Dr. Kureha Smith',
+                        date: 'Wednesday, October 12 2021',
                       ),
                       Report(
-                        title: 'title2',
-                        hospital: 'hospital2',
-                        doctor: 'doctor2',
-                        date: 'date2',
+                        title: 'Diabetes Checkup',
+                        hospital: 'Civil Hospital',
+                        doctor: 'Dr. Reddy Hugh Hass',
+                        date: 'Tuesday, September 16, 2021',
                       ),
                       Report(
-                        title: 'title3',
-                        hospital: 'hospita13',
-                        doctor: 'doctor3',
-                        date: 'date3',
+                        title: 'X-Ray Report',
+                        hospital: 'Balaji Healthcare',
+                        doctor: 'Dr. Chopper Sahu',
+                        date: 'Sunday, August 1, 2020',
                       ),
                     ],
                   ),

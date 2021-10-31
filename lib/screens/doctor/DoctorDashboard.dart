@@ -12,7 +12,7 @@ class _DoctorDashboardState extends State<DoctorDashboard> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: (){
+      onWillPop: () {
         return showDialog(
           context: context,
           builder: (context) => AlertDialog(
@@ -62,14 +62,14 @@ class _DoctorDashboardState extends State<DoctorDashboard> {
             icon: Icon(Icons.menu),
             onPressed: () {},
           ),
-          title: Text('Dashboard',
+          title: Text(
+            'Dashboard',
             style: TextStyle(
               fontSize: 24,
             ),
           ),
           elevation: 0,
           centerTitle: true,
-
         ),
         body: Center(
           child: SafeArea(
@@ -77,10 +77,9 @@ class _DoctorDashboardState extends State<DoctorDashboard> {
               padding: EdgeInsets.fromLTRB(25, 50, 25, 25),
               child: Column(
                 children: [
-
                   SizedBox(height: 100),
-
-                  Text('What you want to do ?',
+                  Text(
+                    'What you want to do ?',
                     style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.w400,
@@ -90,15 +89,14 @@ class _DoctorDashboardState extends State<DoctorDashboard> {
                       wordSpacing: 2,
                     ),
                   ),
-
                   SizedBox(height: 60),
-
                   Center(
                     child: RaisedButton(
-                      onPressed: (){
+                      onPressed: () {
                         Navigator.pushNamed(context, '/SendReport');
                       },
-                      child: Text('Send Reports',
+                      child: Text(
+                        'Send Reports',
                         style: TextStyle(
                           color: Color(0xFF1D1D1D),
                           fontSize: 20,
@@ -109,15 +107,20 @@ class _DoctorDashboardState extends State<DoctorDashboard> {
                       color: Colors.green[200],
                     ),
                   ),
-
                   SizedBox(height: 20),
-
                   Center(
                     child: RaisedButton(
-                      onPressed: (){
-                        Navigator.pushNamed(context, '/EnterPatientUID');
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          '/PatientAllReportsPage',
+                          arguments: {
+                            'fromDoctor': true,
+                          },
+                        );
                       },
-                      child: Text('View Reports',
+                      child: Text(
+                        'View Reports',
                         style: TextStyle(
                           color: Color(0xFF1D1D1D),
                           fontSize: 20,

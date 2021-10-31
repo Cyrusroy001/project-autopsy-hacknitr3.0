@@ -88,7 +88,13 @@ class PatientOrDoctor extends StatelessWidget {
                                   height: 150,
                                   width: 150,
                                   padding: const EdgeInsets.all(10),
-                                  child: Text('title'),
+                                  child: Center(
+                                    child: Image(
+                                      image: AssetImage('assets/images/patient.png'),
+                                      height: 120,
+                                      width: 120,
+                                    ),
+                                  ),
                                   decoration: BoxDecoration(
                                     gradient: LinearGradient(
                                       colors: [
@@ -145,9 +151,12 @@ class PatientOrDoctor extends StatelessWidget {
                                   height: 150,
                                   width: 150,
                                   padding: const EdgeInsets.all(10),
-                                  child: Text(
-                                    'title',
-                                    // style: Theme.of(context).textTheme.title,
+                                  child: Center(
+                                    child: Image(
+                                      image: AssetImage('assets/images/doctor.png'),
+                                      height: 90,
+                                      width: 90,
+                                    ),
                                   ),
                                   decoration: BoxDecoration(
                                     gradient: LinearGradient(
