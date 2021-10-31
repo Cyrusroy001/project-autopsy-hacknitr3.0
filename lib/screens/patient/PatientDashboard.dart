@@ -61,7 +61,6 @@ class _PatientDashboardState extends State<PatientDashboard> {
         appBar: AppBar(
           backgroundColor: Theme.of(context).primaryColor,
           foregroundColor: Colors.black87,
-          
           title: Text('Dashboard'),
           elevation: 0,
           centerTitle: true,
